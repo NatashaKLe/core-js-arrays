@@ -559,11 +559,12 @@ function propagateItemsByPositionIndex(arr) {
   const result = [];
   if (!arr) return [];
   arr.map((el, i) => {
-    const arr1 = Array(i + 1).fill('');
-    arr1.map(() => {
-      result.push(el);
-      return el;
-    });
+    Array(i + 1)
+      .fill('')
+      .map(() => {
+        result.push(el);
+        return el;
+      });
     return el;
   });
   return result;
